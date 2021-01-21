@@ -16,4 +16,4 @@ spec:
         - name: client
           image: polyhistor/multi-client
           ports: 
-            containerPort: 3000
+            - containerPort: 3000

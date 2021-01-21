@@ -4,3 +4,10 @@ metadata:
   name: client-cluster-ip-service
 spec:
   type: ClusterIP
+  selector: 
+    component: web 
+  ports: 
+    # port that other nodes use to communicate to this node
+    - port: 3000
+    # the port of the target of this cluster IP service
+      targetPort: 3000
