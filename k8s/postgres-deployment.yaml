@@ -12,8 +12,30 @@ spec:
       labels:
         component: postgres
     spec:
+      volumes: 
+        - name: postgres-storage
+        # this will claim from database-persistent volume claim that we've created in another config file
+          persistentVolumeClaim: 
+            claimName: database-persistent-volume-claim
       containers:
         - name: postgres
           image: postgres
           ports: 
             - containerPort: 5432
+          # persistent volume claim makes the volum avaibale to the pod, however we have to explictly write
+          # config for the containers to mount
+          volumeMounts: 
+          # basically this will go back to the pod and request for a volume called 'postgress-storage', once that is resolved, the containter mounts the storage
+            - name: postgres-storage
+              # this is where the volume will be mounted
+              mountPath: /var/lib/postgresql/data
+              # this means that any data inside the container data folder is copied in a folder called postgres
+              # inside the persistent volume 
+              subPath: postgres
+          env: 
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef: 
+                  name: pgpassword
+                  key: PGPASSWORD
+
