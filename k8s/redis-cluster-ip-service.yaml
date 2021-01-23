@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: redis-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector: 
+    component: redis
+  ports:
+    # out side incoming traffic goes through this port
+    - port: 6379
+    # and gets mapped to the port below inside the pods' container
+      targetPort: 6379
