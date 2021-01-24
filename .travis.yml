@@ -11,7 +11,7 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
-  - gcloud config set careful-rock-302723
+  - gcloud config set project careful-rock-302723
   - gcloud config set compute/zone australia-southeast1-b
   - gcloud container clusters get-credentials k8s-fibonaci
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
