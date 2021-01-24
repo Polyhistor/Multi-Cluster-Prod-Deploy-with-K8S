@@ -10,7 +10,7 @@ before_install:
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-  - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud auth activate-service-account compute-zone-list --key-file service-account.json
   - gcloud config set project careful-rock-302723
   - gcloud config set compute/zone australia-southeast1-b
   - gcloud container clusters get-credentials k8s-fibonaci
