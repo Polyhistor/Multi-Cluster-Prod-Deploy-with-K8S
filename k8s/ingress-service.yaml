@@ -7,7 +7,7 @@ metadata:
   # to create the ingress controller based on nginx project
     kubenetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: 'true'
-    nginx.ingress.kubernetes.io/rewrite-target: /$1ce
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
