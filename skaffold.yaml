@@ -8,11 +8,12 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile.dev
-      # using Skaffold mode 2 to update files in the pod
+      # using Skaffold mode 2 to update files in the pod only for the files chosen below
       sync: 
         '**/*.js': .
         '**/*.css': .
         '**/*.html': .
+# which manifest file Skaffol should listen to in order to keep the container update
 deploy: 
   kubectl:
     manifests:
