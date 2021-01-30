@@ -13,7 +13,6 @@ build:
         '**/*.js': .
         '**/*.css': .
         '**/*.html': .
-# which manifest file Skaffol should listen to in order to keep the container update
 deploy: 
   kubectl:
     manifests:
