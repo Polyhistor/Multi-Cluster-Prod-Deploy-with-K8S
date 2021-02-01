@@ -8,7 +8,6 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile.dev
-      # using Skaffold mode 2 to update files in the pod only for the files chosen below
       sync: 
         '**/*.js': .
         '**/*.css': .
