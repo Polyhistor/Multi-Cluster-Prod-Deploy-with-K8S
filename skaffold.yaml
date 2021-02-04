@@ -8,7 +8,6 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile.dev
-      # listing file extensions to be watched by Skaffold
       sync: 
         '**/*.js': .
         '**/*.css': .
