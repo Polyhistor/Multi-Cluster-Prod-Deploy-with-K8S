@@ -8,6 +8,7 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile.dev
+      # files that Skaffold are watchi for changes
       sync: 
         '**/*.js': .
         '**/*.css': .
