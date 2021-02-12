@@ -8,6 +8,7 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile.dev
+      # files to be watched
       sync: 
         '**/*.js': .
         '**/*.css': .
